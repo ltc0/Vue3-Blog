@@ -5,12 +5,14 @@
 declare module 'vue' {
   export interface GlobalComponents {
     ArticleItem: typeof import('./components/article/articleItem.vue')['default']
+    BlogItem: typeof import('./components/Blog/BlogItem.vue')['default']
     ButtonRepo: typeof import('./components/ButtonRepo.vue')['default']
     ColorModeSwitch: typeof import('./components/ColorModeSwitch.vue')['default']
     MyFooter: typeof import('./components/MyFooter.vue')['default']
     MyHeader: typeof import('./components/MyHeader.vue')['default']
-    README: typeof import('./components/README.md')['default']
+    Pagination: typeof import('./components/Pagination/Pagination.vue')['default']
     SvgIcon: typeof import('./components/SvgIcon/index.vue')['default']
+    Tools: typeof import('./components/Tools/index.vue')['default']
     Waves: typeof import('./components/Waves/index.vue')['default']
   }
 }

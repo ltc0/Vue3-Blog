@@ -2,37 +2,9 @@
   <header
     class="navbar bg-base-100 w-full  bg-current px-4 lg:h-[68px] fixed z-20 h-20">
     <div class="flex-none ">
-      <a class="btn btn-ghost text-xl normal-case text-rose-50">taizilaoren's blog</a>
-    </div>
-    <!--     <div class="menu-item">
-      <router-link to="/" class="menu-btn">
-        <Icon icon="material-symbols:home-outline" width="22" class="inline-block items-center pb-0.5" />
-        首页
-      </router-link>
+      <a class="btn btn-ghost text-xl normal-case text-rose-50">📝taizilaoren's blog</a>
     </div>
 
-    <div class="menu-item dropdown">
-            <a class="menu-btn drop">
-                文章
-            </a>
-            <ul class="submenu">
-                <li class="subitem" >
-                    <router-link class="link" to="/archive">
-                        <svg-icon icon-class="archives"></svg-icon> 归档
-                    </router-link>
-                </li>
-                <li class="subitem" >
-                    <router-link class="link" to="/category">
-                        <svg-icon icon-class="category"></svg-icon> 分类
-                    </router-link>
-                </li>
-                <li class="subitem">
-                    <router-link class="link" to="/tag">
-                        <svg-icon icon-class="tag"></svg-icon> 标签
-                    </router-link>
-                </li>
-            </ul>
-        </div> -->
 
     <div class="relative inline-block font-medium text-xl space-x-2 p-4 items-center hover:animate-ping">
       <router-link to="/blog" class="flex items-center   text-rose-50">

@@ -14,6 +14,7 @@
     "test:ci-components": "cypress run-ct"
   },
   "dependencies": {
+    "@kangc/v-md-editor": "^2.3.15",
     "@vueuse/core": "~7.7.0",
     "@vueuse/head": "~0.7",
     "daisyui": "~2.0.9",
@@ -35,7 +36,7 @@
     "@tailwindcss/forms": "~0.4",
     "@tailwindcss/line-clamp": "~0.3",
     "@tailwindcss/typography": "~0.5",
-    "@types/node": "^18.15.10",
+    "@types/node": "^18.15.11",
     "@typescript-eslint/eslint-plugin": "~5",
     "@typescript-eslint/parser": "~5",
     "@vitejs/plugin-vue": "~2.2.4",
@@ -51,6 +52,7 @@
     "eslint-plugin-node": "~11.1",
     "eslint-plugin-promise": "~6.0",
     "eslint-plugin-vue": "~8",
+    "naive-ui": "^2.34.3",
     "postcss": "~8.4",
     "postcss-import": "~14.0.2",
     "postcss-nesting": "~10",

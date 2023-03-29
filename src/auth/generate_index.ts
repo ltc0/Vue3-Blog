@@ -14,7 +14,7 @@ const postsIndex: PostIndex[] = []
 for (const categoryFolder of categoryFolders) {
   const categoryPath = join(postsPath, categoryFolder)
   const postFiles = readdirSync(categoryPath)
-
+  console.log(postFiles)
   for (const postFile of postFiles) {
     const postPath = join(categoryPath, postFile)
     const postContent = readFileSync(postPath).toString()

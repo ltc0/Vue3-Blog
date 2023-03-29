@@ -29,7 +29,9 @@
         </li>
       </ul>
     </div>
+    <v-md-editor mode="preview"  ></v-md-editor>
   </div>
+ 
 </template>
 
 <route lang="yaml">
