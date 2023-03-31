@@ -1,5 +1,5 @@
 # vue3-starter
-Vue3 + Element Plus + tailwind.css + Sass 
+Vue3 + Element Plus + tailwind.css + Scss 
 
 # Running the project locally
 Clone the repo

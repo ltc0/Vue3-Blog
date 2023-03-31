@@ -1,4 +1,5 @@
 <template>
+      <MyHeader></MyHeader>
     <div class="page-header">
         <h1 class="page-title">分类</h1>
         <img class="page-cover"

@@ -1,13 +1,15 @@
 <template>
-  <div class="archive-title">文章总览 - {{ count }}
-  </div>
-  <div >
-    <div v-for="(item, index) in data2" :key="index"
-        class="w-1/3 mt-20 ml-auto mr-auto bg-white font-intertransform transition-transform duration-00 ease-in-out dark:bg-darkSecondary rounded-2xl p-2 flex flex-col sm:flex-row items-center mx-auto gap-2 md:gap-7 shadow-md md:shadow-lg">
+
+  <div class="w-1/3 ml-auto mr-auto pt-20 mb-8 space-y-8">
+    <h1 className="text-6xl font-bold my-8 ">Blog Lists</h1>
+        <hr className="my-8" />
+    <div className="text-accent-5">已经发布了{{ count }}篇文章了</div>
+
+    <div v-for="(item, index) in data2" :key="item.id"
+        class="mt-4  transition-transform duration-00 ease-in-out dark:bg-darkSecondary rounded-2xl p-2 flex flex-col sm:flex-row items-center mx-auto gap-2 md:gap-7 shadow-md md:shadow-lg">
         <!-- 左侧图片 -->
         <div className="w-1/3">
-           
-             <router-link :to="`/article/${data2.id}`" href="">
+             <router-link :to="`/blogList/${item.id}`" href="">
               <img src="@/assets/blogImage/2.webp"
                 class="my-auto items-center transition-all duration-400 backdrop-blur-xl rounded-xl object-cover w-full h-full" />
             </router-link>
@@ -15,7 +17,7 @@
 
         <!-- 右侧内容 -->
         <div class="flex flex-col w-full h-full px-2 pb-2 mt-2 sm:mt-0 sm:p-1 lg:py-5 md:pr-5">
-            <router-link :to="`/article/${data2.id}`" href="">
+            <router-link :to="`/blogList/${item.id}`" href="">
               <span
                 class=" font-bold text-neutral-900 md:text-xl dark:text-neutral-200 hover:underline ">{{ item.title }}</span>
             </router-link>
@@ -49,17 +51,17 @@
 
 
     <!-- #分页 -->
-    <Pagination v-if="count > 0"  v-model:current="queryParams.current" :total="Math.ceil(count / 5)">
+    <Pagination v-if="count > 4"  v-model:current="queryParams.current" :total="Math.ceil(count / 5)">
             </Pagination>
 </template>
     
-<script setup tang="ts">
+<script lang="ts" setup>
 import { Icon } from "@iconify/vue";
 import { ref,computed,toRefs,onMounted,reactive } from 'vue'
 import { formatDate } from "@/utils/date";
-//import { PostIndex } from '../types/PostIndex'
 import Pagination from '@/components/Pagination/Pagination.vue';
 import useBlogStore from '@/stores/blog'
+import {BlogInfo} from '@/stores/types/index'
 const store = useBlogStore()
 
 const data2 = ref([]);
@@ -68,19 +70,25 @@ const data = reactive({
     queryParams: {
         current: 1,
         size: 4,
-    } 
+    } ,
+    blog:{
+        id: 1,
+        userId: 1,
+        title: 'test',
+        body: '',
+    } as BlogInfo
 });
 
 const {
     count,
     queryParams,
-    archivesList,
+    blog
 } = toRefs(data);
 onMounted(() => {
-      store.getBlog().then(( res) => {
+      store.getBlog().then((res:any) => {
         data2.value = res.data.slice(0, 20);
         count.value = data2.value.length;
-        console.log(count.value);
+        console.log(data2);
     });
 })
 

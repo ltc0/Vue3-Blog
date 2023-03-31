@@ -7,7 +7,7 @@
 
 
     <div class="relative inline-block font-medium text-xl space-x-2 p-4 items-center hover:animate-ping">
-      <router-link to="/blog" class="flex items-center   text-rose-50">
+      <router-link to="/" class="flex items-center   text-rose-50">
         <Icon icon="material-symbols:home-outline" width="25" class="mr-2" />
         首页
       </router-link>
@@ -19,12 +19,17 @@
         <Icon icon="pixelarticons:article-multiple" width="23" class="mr-2"/>
                 文章
             </a>
-      <ul class="hidden absolute left-1 w-max p-0 mt-2 text-sm  opacity-80 bg-red-200
+      <ul class="hidden absolute left-1 w-max p-0 mt-2 text-x text-red-700 bg-inherit
      rounded-bl-xl group-hover:block "
        >
                 <li class="flex hover:translate-x-2 m-2" >
-                    <router-link class="flex items-center" to="/archive">
-                      <Icon icon="material-symbols:edit-document" width="18" class="mr-1"/> 归档
+                    <router-link class="flex items-center" to="/blogList">
+                      <Icon icon="tabler:category" width="18" class="mr-1"/> 博客
+                    </router-link>
+                </li>
+                <li class="flex hover:translate-x-2 m-2" >
+                    <router-link class="flex items-center" to="/postList">
+                      <Icon icon="material-symbols:edit-document" width="18" class="mr-1"/> 静态文章
                     </router-link>
                 </li>
                 <li class="flex hover:translate-x-2 m-2" >
@@ -69,10 +74,10 @@
 </template>
 
 <script setup lang="ts">
-import { useCounterStore } from '@/stores/counter'
+
 import { Icon } from '@iconify/vue';
 import ColorModeSwitch from "./ColorModeSwitch.vue";
-const counter = useCounterStore()
+
 
 </script>
 

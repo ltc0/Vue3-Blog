@@ -1,5 +1,5 @@
 <template>
-    <n-pagination v-model:page="currentPage" :page-count="total" class=" justify-center p-10"/>
+    <n-pagination v-model:page="currentPage" :page-count="total" :page-slot="5" class=" justify-center p-10"/>
 </template>
 
 

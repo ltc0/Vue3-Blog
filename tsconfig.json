@@ -10,11 +10,12 @@
     "lib": ["esnext", "dom"],
     "types": ["vite/client", "cypress", "vite-plugin-pages/client", "vite-plugin-vue-layouts/client","@intlify/vite-plugin-vue-i18n/client","node"],
     "resolveJsonModule": true,
+    "typeRoots": ["node_modules/@types"],
     "plugins": [{ "name": "@vuedx/typescript-plugin-vue" }],
     "paths": {
       "@/*": ["./src/*"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.vue"],
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.vue", "src/auth/generate_index.ts"],
   "exclude": ["node_modules", "dist", "public", "tests"]
 }
